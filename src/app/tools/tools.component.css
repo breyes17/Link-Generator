@@ -1,0 +1,11 @@
+.app{
+    margin-bottom: 10px;
+}
+
+.generate{
+    text-align: center;
+}
+
+.invalid{
+    color:red;
+}
