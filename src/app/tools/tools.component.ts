@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tools',
@@ -19,8 +19,7 @@ export class ToolsComponent implements OnInit {
     let projnum = this.pnum.trim();
     if(this.confirmit.test(projnum)){
       console.log('confirmit')
-    }
-    else if(this.decipher.test(projnum)){
+    } else if(this.decipher.test(projnum)){
       console.log('decipher')
     } else {
       this.result = !this.result;
