@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'linkGenerator';
+  pform = '';
+  pnum = '';
+  onGenerated(event){
+    this.pform = event.platform;
+    this.pnum = event.pnum;
+  }
 }

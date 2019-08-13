@@ -1,14 +1,17 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Platform } from '../shared/platform.model';
 
 @Component({
   selector: 'app-tools',
   templateUrl: './tools.component.html',
   styleUrls: ['./tools.component.css']
 })
+
 export class ToolsComponent implements OnInit {
+  @Output() gplatform = new EventEmitter<Platform>();
   pnum = "";
-  confirmit = /p\d{7}/g;
-  decipher = /^\d+$/g;
+  confirmit = /p\d{7}/;
+  decipher = /^\d+$/;
   result = false;
   constructor() { }
 
@@ -16,11 +19,18 @@ export class ToolsComponent implements OnInit {
   }
 
   onGenerate(){
+    //debugger;
     let projnum = this.pnum.trim();
     if(this.confirmit.test(projnum)){
-      console.log('confirmit')
+      this.gplatform.emit(new Platform(
+        'confirmit',
+        projnum
+      ));
     } else if(this.decipher.test(projnum)){
-      console.log('decipher')
+      this.gplatform.emit(new Platform(
+        'decipher',
+        projnum
+      ));
     } else {
       this.result = !this.result;
     }

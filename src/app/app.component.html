@@ -3,10 +3,14 @@
     <p class="display-4">Welcome to Mobile Legends!</p>
     <div class="row">
       <div class="col-md-6">
-        <app-tools></app-tools>
+        <app-tools (gplatform)="onGenerated($event)"></app-tools>
       </div>
       <div class="col-md-6">
-        <app-display></app-display>
+        <app-display *ngIf="pform === 'confirmit' || pform === 'decipher'; else thumbnail"></app-display>
+        <ng-template #thumbnail>
+          <p>testing</p>
+        </ng-template>
+        
       </div>
     </div>
   </div>
