@@ -1,7 +1,41 @@
-<label for="test link">Test link(Old template)</label>
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">Test link</span>
+<div id="confirmit" *ngIf="pform === 'confirmit'" >
+    <div class="urls">
+        <label for="test link">Test link(Old template)</label>
+        <!-- <input type="text" class="form-control" placeholder="Test link" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="ctestlink"> -->
+        <div class="card">
+            <div class="card-body">{{ ctestlink }}</div>
+        </div>
     </div>
-    <input type="text" class="form-control" placeholder="Test link" aria-label="Username" aria-describedby="basic-addon1">
+    <div class="urls">
+        <label for="test link">Test link(GUST template) - Adjust the pin of your choice.</label>
+        <!-- <input type="text" class="form-control" placeholder="Test link" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="cnewtestlink"> -->
+        <div class="card">
+            <div class="card-body">{{ cnewtestlink }}</div>
+        </div>
+    </div>
+    <div class="urls">
+        <label for="test link">Live link - Don't forget to update the "l" code for non-english survey.</label>
+        <!-- <input type="text" class="form-control" placeholder="Test link" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="clivelink"> -->
+        <div class="card">
+            <div class="card-body">{{ clivelink }}</div>
+        </div>
+    </div>
+</div> 
+
+
+<div *ngIf="pform === 'decipher'">
+    <div class="urls">
+        <label for="test link">Test link - Assuming that you have set the default sample source</label>
+        <!-- <input type="text" class="form-control" placeholder="Test link" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="ctestlink"> -->
+        <div class="card">
+            <div class="card-body">{{ dtestlink }}</div>
+        </div>
+    </div>
+    <div class="urls">
+        <label for="test link">Test link(Live)</label>
+        <!-- <input type="text" class="form-control" placeholder="Test link" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="ctestlink"> -->
+        <div class="card">
+            <div class="card-body">{{ dtestlinklive }}</div>
+        </div>
+    </div>
 </div>

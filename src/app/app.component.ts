@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Platform } from 'src/app/shared/platform.model';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'linkGenerator';
-  pform = '';
-  pnum = '';
-  onGenerated(event){
-    this.pform = event.platform;
-    this.pnum = event.pnum;
-  }
+  onGenerated : Platform;
+  // pform = '';
+  // pnum = '';
+  // onGenerated(event){
+  //   this.pform = event.platform;
+  //   this.pnum = event.pnum;
+  // }
 }

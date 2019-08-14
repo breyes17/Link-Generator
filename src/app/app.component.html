@@ -3,15 +3,19 @@
     <p class="display-4">Welcome to Mobile Legends!</p>
     <div class="row">
       <div class="col-md-6">
-        <app-tools (gplatform)="onGenerated($event)"></app-tools>
+        <app-tools (gplatform)="onGenerated = $event"></app-tools>
       </div>
       <div class="col-md-6">
-        <app-display *ngIf="pform === 'confirmit' || pform === 'decipher'; else thumbnail"></app-display>
+        <!-- <app-display *ngIf="pform === 'confirmit' || pform === 'decipher'; else thumbnail"></app-display> -->
+        <app-display *ngIf="onGenerated; else thumbnail" [getGenerated]="onGenerated"></app-display>
         <ng-template #thumbnail>
-          <p>testing</p>
+          <div style="display: flex; justify-content: center; align-items: center; height: auto;">
+            <p>Please enter your project number</p>
+          </div>
         </ng-template>
         
       </div>
     </div>
   </div>
+    <app-footer></app-footer>
 </div>

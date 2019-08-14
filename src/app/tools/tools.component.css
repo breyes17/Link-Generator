@@ -3,9 +3,19 @@
 }
 
 .generate{
+    margin-top: 10px;
     text-align: center;
 }
 
 .invalid{
     color:red;
+}
+
+.variables{
+    display: flex;
+    padding: 0 25px;
+}
+
+.variables a {
+    color: #5d5d5d;
 }

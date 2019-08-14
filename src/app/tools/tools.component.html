@@ -1,7 +1,9 @@
 
 <label for="projectnum">Project Number</label>
 <input type="text" class="form-control app" name="projectnum" [(ngModel)]="pnum">
-<label class="invalid" *ngIf="result">*Invalid Project Number!</label>
+<div class="alert alert-danger" role="alert" *ngIf="result">
+    Please enter a valid project number.
+</div>
 <div class="appendedgrp">
     <label for="projectnum">Appended Variables</label>
     <input type="text" class="form-control app" name="projectnum" id="appended1"> 
@@ -9,7 +11,11 @@
     <input type="text" class="form-control app" name="projectnum" id="appended3">
     <input type="text" class="form-control app" name="projectnum" id="appended4">
     <input type="text" class="form-control app" name="projectnum" id="appended5">
-    
+    <div class="variables" style="display: flex; padding: 0px 20px;">
+        <a href="#"><small>Add appended variable</small></a>
+        <span style="flex: 1;"></span>
+        <a href="#"><small>Remove appended variable</small></a>
+    </div>
 </div>
 
 <div class="generate">

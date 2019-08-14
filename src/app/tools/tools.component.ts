@@ -10,7 +10,7 @@ import { Platform } from '../shared/platform.model';
 export class ToolsComponent implements OnInit {
   @Output() gplatform = new EventEmitter<Platform>();
   pnum = "";
-  confirmit = /p\d{7}/;
+  confirmit = /p\d{7}$/;
   decipher = /^\d+$/;
   result = false;
   constructor() { }
@@ -21,18 +21,18 @@ export class ToolsComponent implements OnInit {
   onGenerate(){
     //debugger;
     let projnum = this.pnum.trim();
+    let platform = '';
     if(this.confirmit.test(projnum)){
-      this.gplatform.emit(new Platform(
-        'confirmit',
-        projnum
-      ));
+      platform = 'confirmit';
     } else if(this.decipher.test(projnum)){
-      this.gplatform.emit(new Platform(
-        'decipher',
-        projnum
-      ));
+      platform = 'decipher';
+    }
+
+    if(platform !== ''){
+      this.gplatform.emit(new Platform(platform,projnum));
+      this.result = false;
     } else {
-      this.result = !this.result;
+      this.result = true;
     }
   }
 

@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ToolsComponent } from './tools/tools.component';
 import { FormsModule } from '@angular/forms';
 import { DisplayComponent } from './display/display.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolsComponent,
-    DisplayComponent
+    DisplayComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
