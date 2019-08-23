@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Platform } from '../shared/platform.model';
+import { r3JitTypeSourceSpan } from '@angular/compiler';
 
 @Component({
   selector: 'app-tools',
@@ -13,9 +14,20 @@ export class ToolsComponent implements OnInit {
   confirmit = /p\d{7}$/;
   decipher = /^\d+$/;
   result = false;
+  cnt : number = 0;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  incNum(){
+    this.cnt++;
+    return this.cnt >= 5 ? this.cnt = 5 : this.cnt;
+  }
+
+  decNum(){
+    this.cnt--;
+    return this.cnt === 0 ? this.cnt = 0 : this.cnt;
   }
 
   onGenerate(){

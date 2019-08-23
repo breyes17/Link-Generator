@@ -5,16 +5,16 @@
     Please enter a valid project number.
 </div>
 <div class="appendedgrp">
-    <label for="projectnum">Appended Variables</label>
-    <input type="text" class="form-control app" name="projectnum" id="appended1"> 
-    <input type="text" class="form-control app" name="projectnum" id="appended2">
-    <input type="text" class="form-control app" name="projectnum" id="appended3">
-    <input type="text" class="form-control app" name="projectnum" id="appended4">
-    <input type="text" class="form-control app" name="projectnum" id="appended5">
+    <label for="projectnum" *ngIf="cnt >= 1">Appended Variables</label>
+    <input type="text" class="form-control app" name="projectnum" id="appended1" *ngIf="cnt >= 1"> 
+    <input type="text" class="form-control app" name="projectnum" id="appended2" *ngIf="cnt >= 2">
+    <input type="text" class="form-control app" name="projectnum" id="appended3" *ngIf="cnt >= 3">
+    <input type="text" class="form-control app" name="projectnum" id="appended4" *ngIf="cnt >= 4">
+    <input type="text" class="form-control app" name="projectnum" id="appended5" *ngIf="cnt >= 5">
     <div class="variables" style="display: flex; padding: 0px 20px;">
-        <a href="#"><small>Add appended variable</small></a>
-        <span style="flex: 1;"></span>
-        <a href="#"><small>Remove appended variable</small></a>
+        <a href="#" (click)="incNum()"><small>Add appended variable</small></a>
+        <span style="flex: 1;" *ngIf="cnt >= 1"></span>
+        <a href="#" (click)="decNum()" *ngIf="cnt >= 1"><small>Remove appended variable</small></a>
     </div>
 </div>
 
